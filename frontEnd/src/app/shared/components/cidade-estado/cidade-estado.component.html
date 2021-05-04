@@ -1,0 +1,24 @@
+<dx-form >
+  <dxi-item itemType="group" colCount="2">
+    <dxi-item [label]="{text: 'ESTADO'}" template="estadoTemplate"></dxi-item>
+    <dxi-item [label]="{text: 'CIDADE'}" template="cidadeTemplate"></dxi-item>
+  </dxi-item>
+  <div *dxTemplate="let data of 'estadoTemplate'">
+    <dx-select-box
+      [dataSource]="listaUfs"
+      showClearButton=true
+      placeholder="SELECIONE O ESTADO"
+      displayExpr="nome"
+    (valueChange)="getEstado($event)" >
+    </dx-select-box>
+  </div>
+  <div *dxTemplate="let data of 'cidadeTemplate'">
+    <dx-select-box
+      [dataSource]="listaMunicipios"
+      placeholder="SELECIONE A CIDADE"
+      displayExpr="nome"
+      showClearButton=true>
+    </dx-select-box>
+  </div>
+
+</dx-form>

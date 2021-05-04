@@ -1,0 +1,20 @@
+<h2 class="content-block">Contribuinte</h2>
+
+<dx-data-grid
+  id="gridContainer"
+  [allowColumnReordering]="true"
+  [allowColumnResizing]="true"
+  [columnAutoWidth]="true"
+  [showBorders]="true">
+  <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+  <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+  <dxi-column
+    caption="CLIENTE"
+    [width]="200"
+    [fixed]="true"
+    [calculateCellValue]=""
+  ></dxi-column>
+  <dxi-column dataField="ID" alignment="center"></dxi-column>
+  <dxi-column dataField="IDADE" alignment="center"></dxi-column>
+  <dxi-column dataField="DATA" alignment="center" dataType="date" ></dxi-column>
+</dx-data-grid>
