@@ -18,10 +18,10 @@ import {HomeComponent} from './pages/home/home.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {TasksComponent} from './pages/tasks/tasks.component';
 import {ShowComponent} from './pages/show/show.component';
-import {DxButtonModule, DxDataGridModule, DxFormModule, DxListModule} from 'devextreme-angular';
+import {DxButtonModule, DxDataGridModule, DxFormModule, DxListModule, DxTextBoxModule} from 'devextreme-angular';
 import {HttpClientModule} from '@angular/common/http';
 import { NotaFiscalComponent } from './pages/nota-fiscal/nota-fiscal.component';
-import { ContribuinteComponent } from './pages/contribuinte/contribuinte.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { ContribuinteComponent } from './pages/contribuinte/contribuinte.compone
     TasksComponent,
     ShowComponent,
     NotaFiscalComponent,
-    ContribuinteComponent,
+    ClienteComponent,
 
   ],
   imports: [
@@ -51,11 +51,13 @@ import { ContribuinteComponent } from './pages/contribuinte/contribuinte.compone
     DxFormModule,
     DxListModule,
     DxButtonModule,
+    HttpClientModule,
+    DxTextBoxModule,
   ],
   providers: [
     AuthService,
     ScreenService,
-    AppInfoService
+    AppInfoService,
   ],
   exports: [
   ],

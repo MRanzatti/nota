@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/cliente")
+@RequestMapping(value = "/api/cliente")
 public class ClienteController {
 
 
@@ -24,7 +24,7 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/tudo")
+    @GetMapping("/")
     public List<Cliente> listarTudo() {
         return clienteRepository.findAll();
     }

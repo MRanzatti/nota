@@ -7,7 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import {ShowComponent} from './pages/show/show.component';
 import {NotaFiscalComponent} from './pages/nota-fiscal/nota-fiscal.component';
-import {ContribuinteComponent} from './pages/contribuinte/contribuinte.component';
+import {ClienteComponent} from './pages/cliente/cliente.component';
 
 const routes: Routes = [
   {
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'contribuinte',
-    component: ContribuinteComponent
+    component: ClienteComponent
   },
   {
     path: 'home',

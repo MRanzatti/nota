@@ -10,11 +10,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 150)
     private String nome;
 
-    @Column(nullable = false)
-    private Integer idade;
+    @Column(nullable = false, length = 11)
+    private String cpf;
 
 
     public Long getId() {
@@ -33,11 +33,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

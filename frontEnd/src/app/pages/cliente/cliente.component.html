@@ -1,0 +1,10 @@
+<dx-form [(formData)]="cliente">
+  <dxi-item dataField="ID" editorType="dxTextBox" [editorOptions]="{width: 80, readOnly: true}"></dxi-item>
+  <dxi-item dataField="Nome" template="nomeTemplate"></dxi-item>
+
+  <div *dxTemplate="let data of 'nomeTemplate'">
+    <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" width="600">
+    </dx-text-box>
+  </div>
+
+</dx-form>
