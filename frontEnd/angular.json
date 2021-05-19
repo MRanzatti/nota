@@ -96,7 +96,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "cidadeEstado:build:production"
+              "browserTarget": "cidadeEstado:build:production",
+              "proxyConfig": "proxy.config.js"
             }
           }
         },

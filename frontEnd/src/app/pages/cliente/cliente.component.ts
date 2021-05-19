@@ -9,20 +9,17 @@ import {Cliente} from "../../model/cliente";
 })
 export class ClienteComponent implements OnInit {
 
-  cliente:Cliente[] =[];
+  cliente:Cliente = new Cliente();
 
   constructor( private service: ClienteService) {
-
+    this.onSalvarClick = this.onSalvarClick.bind(this);
   }
 
   ngOnInit(): void {
-    this.buscaCliente();
   }
 
-  public buscaCliente(): void{
-    this.cliente = [];
-    this.service.listar()
-      .subscribe(cliente: Cliente)
+  onSalvarClick(){
+    if (this.cliente)
+      this.service.novo(this.cliente).subscribe(c => this.cliente = c);
   }
-
 }

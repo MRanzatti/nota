@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/cliente")
+@RequestMapping(value = "/cliente")
 public class ClienteController {
 
 
@@ -30,13 +30,13 @@ public class ClienteController {
     }
 
     @PostMapping("/")
-    public void incluir(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
+    public Cliente novo(@RequestBody Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
 
     @PutMapping("/")
-    public void update(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
+    public Cliente atualizar(@RequestBody Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
 
     @DeleteMapping("/{id}")

@@ -1,10 +1,16 @@
 <dx-form [(formData)]="cliente">
-  <dxi-item dataField="ID" editorType="dxTextBox" [editorOptions]="{width: 80, readOnly: true}"></dxi-item>
-  <dxi-item dataField="Nome" template="nomeTemplate"></dxi-item>
 
-  <div *dxTemplate="let data of 'nomeTemplate'">
-    <dx-text-box [(value)]="data.component.option('formData')[data.dataField]" width="600">
-    </dx-text-box>
-  </div>
+  <dxi-item dataField="id" editorType="dxTextBox" [editorOptions]="{width: 80, readOnly: true}"></dxi-item>
+  <dxi-item dataField="nome" editorType="dxTextBox" [editorOptions]="{width: 350}" ></dxi-item>
+  <dxi-item dataField="cpf" editorType="dxTextBox" [editorOptions]="{width: 200}" ></dxi-item>
+
+  <dxi-item itemType="group" colCount="11" [alignItemLabels]="">
+    <dxi-item itemType="button" [buttonOptions]="{text:'Adicionar', type: 'success', onClick: onSalvarClick}"></dxi-item>
+    <dxi-item itemType="button" [buttonOptions]="{text:'Atualizar', type: 'normal', onClick: onSalvarClick}"></dxi-item>
+    <dxi-item itemType="button" [buttonOptions]="{text:'Apagar', type: 'danger', onClick: onSalvarClick}"></dxi-item>
+    <dxi-item itemType="empty" colCount="8"></dxi-item>
+  </dxi-item>
+
+
 
 </dx-form>

@@ -8,12 +8,23 @@ import { Cliente } from'../../model/cliente';
 })
 export class ClienteService {
 
-  constructor( private http: HttpClient ) {
+  constructor( private http: HttpClient ) {}
 
-
-    listar(){
-      return this.http.get<Cliente[]>('/api/cliente/');
-    }
-
+  public listar(id){
+    return this.http.get<Cliente>("/api/cliente/", id);
   }
+  public listartudo(cliente){
+    return this.http.get<Cliente>("/api/cliente/", cliente);
+  }
+  public novo(cliente){
+    return this.http.post<Cliente>("/api/cliente/", cliente);
+  }
+  public update(cliente) {
+    return this.http.put<Cliente>("/api/cliente/", cliente);
+  }
+  public deletar(cliente){
+    return this.http.delete<Cliente>("/api/cliente/", cliente);
+  }
+
+
 }
