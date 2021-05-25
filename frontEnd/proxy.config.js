@@ -4,6 +4,7 @@ const proxy = [
     target: 'http://localhost:8080',
     pathRewrite: { '^/api': ''},
     secure: false
+
   }
 ];
 module.exports = proxy;

@@ -10,20 +10,20 @@ export class ClienteService {
 
   constructor( private http: HttpClient ) {}
 
-  public listar(id){
-    return this.http.get<Cliente>("/api/cliente/", id);
+  public listar(cliente){
+    return this.http.get<Cliente>("/api/cliente/", cliente.id);
   }
-  public listartudo(cliente){
-    return this.http.get<Cliente>("/api/cliente/", cliente);
+  public listarTudo(){
+    return this.http.get<Cliente[]>("/api/cliente/");
   }
-  public novo(cliente){
+  public adicionar(cliente){
     return this.http.post<Cliente>("/api/cliente/", cliente);
   }
-  public update(cliente) {
+  public atualizar(cliente) {
     return this.http.put<Cliente>("/api/cliente/", cliente);
   }
   public deletar(cliente){
-    return this.http.delete<Cliente>("/api/cliente/", cliente);
+    return this.http.delete<Cliente>("/api/cliente/", cliente.id);
   }
 
 

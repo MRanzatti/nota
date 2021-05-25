@@ -6,11 +6,31 @@
 
   <dxi-item itemType="group" colCount="11" [alignItemLabels]="">
     <dxi-item itemType="button" [buttonOptions]="{text:'Adicionar', type: 'success', onClick: onSalvarClick}"></dxi-item>
-    <dxi-item itemType="button" [buttonOptions]="{text:'Atualizar', type: 'normal', onClick: onSalvarClick}"></dxi-item>
-    <dxi-item itemType="button" [buttonOptions]="{text:'Apagar', type: 'danger', onClick: onSalvarClick}"></dxi-item>
-    <dxi-item itemType="empty" colCount="8"></dxi-item>
+    <dxi-item itemType="button" [buttonOptions]="{text:'Novo', type: 'sucess', onclick: onNovoClick }"></dxi-item>
+    <dxi-item itemType="button" [buttonOptions]="{text:'Deletar', type: 'danger', onClick: onDeletarClick}"></dxi-item>
+    <dxi-item itemType="empty" colCount="9"></dxi-item>
   </dxi-item>
 
-
-
 </dx-form>
+
+<dx-data-grid
+  (onSelectionChanged)="populaGrid()"
+  [dataSource]="clientes"
+  [showBorders]="true">
+
+  <dxo-selection mode="single"></dxo-selection>
+
+  <dxo-editing
+    [allowDeleting]="true"
+    [allowUpdating]="true"
+    mode="row"
+  ></dxo-editing>
+
+
+  <dxi-column dataField="id" [allowEditing]="false"></dxi-column>
+  <dxi-column dataField="nome"></dxi-column>
+  <dxi-column dataField="cpf"></dxi-column>
+</dx-data-grid>
+
+
+

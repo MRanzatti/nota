@@ -30,7 +30,7 @@ public class ClienteController {
     }
 
     @PostMapping("/")
-    public Cliente novo(@RequestBody Cliente cliente) {
+    public Cliente adicionar(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 
@@ -40,7 +40,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public void apagar(@PathVariable Long id) {
+    public void deletar(@PathVariable Long id) {
         try {
             clienteRepository.deleteById(id);
         } catch (EmptyResultDataAccessException ex) {

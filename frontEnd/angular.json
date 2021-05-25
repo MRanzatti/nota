@@ -92,12 +92,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cidadeEstado:build"
+            "browserTarget": "cidadeEstado:build",
+            "proxyConfig": "proxy.config.js"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cidadeEstado:build:production",
-              "proxyConfig": "proxy.config.js"
+              "browserTarget": "cidadeEstado:build:production"
             }
           }
         },
